@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poetry — Mlungisi Dube</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* Poetry-specific styles */
+  .poem-card {
+    background: var(--surface);
+    padding: 3rem;
+    margin-bottom: 1.5px;
+    border-top: 1px solid var(--border);
+    position: relative;
+    transition: background 0.25s;
+  }
+  .poem-card:first-child { border-top: none; }
+  .poem-card:hover { background: var(--bg); }
+
+  .poem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 2rem;
+  }
+
+  .poem-title-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .poem-title-block .poem-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent2);
+  }
+
+  .poem-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--border);
+    flex-shrink: 0;
+  }
+
+  .poem-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--text);
+    max-width: 520px;
+    white-space: pre-line;
+  }
+
+  .poem-note {
+    margin-top: 1.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+    font-style: normal;
+  }
+
+  .poem-placeholder {
+    background: var(--surface);
+    padding: 3rem;
+    text-align: center;
+    border: 1.5px dashed var(--border);
+    margin-bottom: 1rem;
+  }
+
+  .poem-placeholder p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .poem-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    border: 1px solid var(--light-accent2);
+    background: var(--light-accent2);
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Mlungisi<span>.</span></a>
+  <nav>
+    <a href="it-risk-audit.html">IT Risk & Audit</a>
+    <a href="ai-risk.html">AI & Risk</a>
+    <a href="books-history.html">Books</a>
+    <a href="poetry.html" class="active">Poetry</a>
+    <a href="#" class="cta">Newsletter</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <a href="index.html" class="back-link">
+    <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M13 5H1M6 1L2 5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to home
+  </a>
+  <div class="page-hero-eyebrow blue">Language &amp; Feeling</div>
+  <h1><em class="blue">Poetry</em></h1>
+  <p class="lead">Words arranged with intention. Poems about identity, place, struggle, wonder — and the quiet spaces between certainty and doubt. Writing as a way of paying attention to what is otherwise too easily forgotten.</p>
+</div>
+
+<div class="page-divider"></div>
+
+<div class="page-content">
+
+  <div class="prose-section">
+    <h2>On Writing Poetry</h2>
+    <p>Poetry is the most honest form of writing I know. Unlike prose, it cannot hide behind momentum. Every word has to earn its place. Every line break is a decision. The compression it demands forces a kind of clarity that other forms allow you to avoid.</p>
+    <p>The poems here move between the personal and the political, the intimate and the historical. Some are finished; others are working drafts that may change. All of them are attempts to say something true, in the fewest words possible.</p>
+  </div>
+
+  <div class="section-label"><span>Poems</span></div>
+
+  <!-- POEM 1 — Placeholder sample poem for tone/style -->
+  <div class="poem-card">
+    <div class="poem-tag">Identity</div>
+    <div class="poem-header">
+      <div class="poem-title-block">
+        <h3>What They Called Progress</h3>
+        <span class="poem-subtitle">On memory &amp; erasure</span>
+      </div>
+      <span class="poem-year">I.</span>
+    </div>
+    <div class="poem-body">They came with maps already drawn,
+names already chosen,
+borders that cut through
+the bodies of people
+who had never heard the word
+for what was being done to them.
+
+We learned their language
+to survive
+and found, halfway through a sentence,
+we had forgotten
+the word for home.</div>
+    <div class="poem-note">A meditation on language loss and the colonial rewriting of identity. The poem asks what it means to carry a history that was deliberately obscured — and whether the act of naming it back is enough.</div>
+  </div>
+
+  <!-- POEM 2 -->
+  <div class="poem-card">
+    <div class="poem-tag">Technology</div>
+    <div class="poem-header">
+      <div class="poem-title-block">
+        <h3>The Algorithm Decides</h3>
+        <span class="poem-subtitle">On automation &amp; accountability</span>
+      </div>
+      <span class="poem-year">II.</span>
+    </div>
+    <div class="poem-body">No one signed it.
+No one chose the outcome.
+The model recommended,
+the system actioned,
+the human nodded
+without quite reading
+what it meant.
+
+Somewhere, a door closed.
+Somewhere, a number changed.
+Somewhere, a life bent
+around a decision
+no one made.</div>
+    <div class="poem-note">Written in response to thinking about algorithmic decision-making and the diffusion of responsibility in automated systems. When accountability is distributed across a pipeline, it can disappear entirely.</div>
+  </div>
+
+  <!-- POEM 3 — Placeholder -->
+  <div class="poem-card">
+    <div class="poem-tag">Place</div>
+    <div class="poem-header">
+      <div class="poem-title-block">
+        <h3>Durban, 6am</h3>
+        <span class="poem-subtitle">On home &amp; distance</span>
+      </div>
+      <span class="poem-year">III.</span>
+    </div>
+    <div class="poem-body">The Indian Ocean does not care
+about your credentials.
+It arrives the same way
+every morning —
+salt and certainty,
+the sound of something
+older than ambition.
+
+I left and the ocean stayed.
+That is the agreement
+every city makes
+with the people who leave it.</div>
+    <div class="poem-note">A poem about the specific texture of leaving a place you love — and the strange guilt of that leaving. Durban is where a great deal of who I am was formed, even from a distance.</div>
+  </div>
+
+  <!-- Placeholder for future poems -->
+  <div class="poem-placeholder">
+    <p>More poems will be added here as they are written.<br>
+    This is a living collection — some complete, some still becoming.</p>
+  </div>
+
+  <div class="callout blue">
+    <p>"Poetry is not a turning loose of emotion, but an escape from emotion; it is not the expression of personality, but an escape from personality." — T.S. Eliot</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© Mlungisidube.com</p>
+  <div>
+    <a href="#">Twitter</a>
+    <a href="#">LinkedIn</a>
+    <a href="index.html">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>
