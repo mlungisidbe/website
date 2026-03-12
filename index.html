@@ -41,11 +41,12 @@
     opacity: 0.2;
   }
 
+  /* ── HEADER ── */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.8rem 3rem;
+    padding: 1.1rem 3rem;
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
@@ -57,170 +58,161 @@
 
   .logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.08em;
     color: var(--text);
     text-decoration: none;
   }
-
   .logo span { color: var(--accent); }
 
-  nav {
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
-  }
+  nav { display: flex; gap: 2.5rem; align-items: center; }
 
   nav a {
     color: var(--muted);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     transition: color 0.2s;
     font-weight: 600;
   }
-
   nav a:hover { color: var(--text); }
 
   nav .cta {
     color: var(--accent);
     border: 1.5px solid var(--accent);
-    padding: 0.45rem 1.2rem;
+    padding: 0.36rem 1.1rem;
     border-radius: 2px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     transition: all 0.2s;
   }
+  nav .cta:hover { background: var(--accent); color: #fff; }
 
-  nav .cta:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-
+  /* ── HERO — horizontal, compact ── */
   .hero {
-    padding: 3rem 3rem 2rem;
-    max-width: 860px;
+    padding: 2rem 3rem 1.4rem;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
-    animation: fadeUp 0.8s 0.2s ease both;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    animation: fadeUp 0.7s 0.15s ease both;
+    border-bottom: 1px solid var(--border);
   }
+
+  .hero-left { flex: 1; min-width: 0; }
 
   .hero-eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.28em;
+    font-size: 0.61rem;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.6rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    gap: 0.75rem;
   }
-
-  .hero-eyebrow::before,
-  .hero-eyebrow::after {
+  .hero-eyebrow::before {
     content: '';
     height: 1px;
-    width: 40px;
+    width: 24px;
     background: var(--accent);
-    opacity: 0.4;
+    opacity: 0.5;
+    flex-shrink: 0;
   }
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(1.9rem, 3.5vw, 3.1rem);
     font-weight: 300;
-    line-height: 1.08;
+    line-height: 1.1;
     color: var(--text);
-    margin-bottom: 1rem;
   }
+  .hero h1 em { font-style: italic; color: var(--accent); }
 
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .hero p {
+  .hero-right {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     font-weight: 300;
-    line-height: 1.75;
+    line-height: 1.7;
     color: var(--muted);
-    max-width: 540px;
-    margin: 0 auto;
+    max-width: 320px;
+    flex-shrink: 0;
+    border-left: 1px solid var(--border);
+    padding-left: 2rem;
   }
 
-  .section-label {
+  /* ── SECTION LABEL ── */
+  .divider-row {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    padding: 0 3rem;
+    gap: 1.4rem;
+    padding: 1.2rem 3rem 1rem;
     max-width: 1200px;
-    margin: 2rem auto 1rem;
-    animation: fadeUp 0.8s 0.4s ease both;
+    margin: 0 auto;
+    animation: fadeUp 0.7s 0.28s ease both;
   }
-
-  .section-label span {
+  .divider-row span {
     font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.61rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--muted);
     white-space: nowrap;
   }
-
-  .section-label::after {
+  .divider-row::after {
     content: '';
     flex: 1;
     height: 1px;
     background: var(--border);
   }
 
+  /* ── TILES ── */
   .tiles {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5px;
+    gap: 1.4rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 3rem 3rem;
-    background: var(--border);
-    animation: fadeUp 0.8s 0.5s ease both;
+    padding: 0 3rem 2.5rem;
+    animation: fadeUp 0.7s 0.38s ease both;
+  }
+
+  .tile-column {
+    display: flex;
+    flex-direction: column;
   }
 
   .tile {
     background: var(--surface);
-    padding: 2rem;
+    padding: 2.2rem 2.4rem;
     cursor: pointer;
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     position: relative;
     overflow: hidden;
     transition: background 0.3s;
-    min-height: 260px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    flex: 1;
   }
 
   .tile::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     height: 3px;
     background: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s ease;
   }
-
-  .tile:nth-child(2)::after,
-  .tile:nth-child(4)::after {
-    background: var(--accent2);
-  }
-
+  .tile-column:nth-child(2) .tile::after { background: var(--accent2); }
   .tile:hover::after { transform: scaleX(1); }
 
   .tile::before {
@@ -232,40 +224,34 @@
     background: radial-gradient(ellipse at top left, rgba(139,69,19,0.04) 0%, transparent 65%);
     pointer-events: none;
   }
-
-  .tile:nth-child(2)::before,
-  .tile:nth-child(4)::before {
+  .tile-column:nth-child(2) .tile::before {
     background: radial-gradient(ellipse at top right, rgba(42,107,124,0.05) 0%, transparent 65%);
   }
-
   .tile:hover { background: var(--bg); }
   .tile:hover::before { opacity: 1; }
 
-  .tile-icon { width: 48px; height: 48px; flex-shrink: 0; }
-
-  .tile-meta {
+  .tile-top {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex: 1;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
   }
+
+  .tile-icon { width: 48px; height: 48px; flex-shrink: 0; opacity: 0.9; }
 
   .tile-category {
     font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
+    font-size: 0.59rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
+    padding-top: 0.1rem;
   }
-
-  .tile:nth-child(2) .tile-category,
-  .tile:nth-child(4) .tile-category {
-    color: var(--accent2);
-  }
+  .tile-column:nth-child(2) .tile-category { color: var(--accent2); }
 
   .tile-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     font-weight: 400;
     line-height: 1.1;
     color: var(--text);
@@ -273,79 +259,118 @@
 
   .tile-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 1.02rem;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--muted);
-    max-width: 360px;
   }
+
+  .tile-sublinks {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .tile-sublink {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tile:hover .tile-sublink { color: var(--accent); border-color: var(--accent); }
+  .tile-column:nth-child(2) .tile:hover .tile-sublink { color: var(--accent2); border-color: var(--accent2); }
 
   .tile-arrow {
     margin-top: auto;
+    padding-top: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    font-size: 0.7rem;
+    font-size: 0.66rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--border);
     font-weight: 600;
     transition: color 0.2s, gap 0.2s;
   }
-
   .tile:hover .tile-arrow { color: var(--accent); gap: 1rem; }
-  .tile:nth-child(2):hover .tile-arrow,
-  .tile:nth-child(4):hover .tile-arrow { color: var(--accent2); }
+  .tile-column:nth-child(2) .tile:hover .tile-arrow { color: var(--accent2); }
 
+  /* ── NEWSLETTER STRIP ── */
+  .tile-newsletter {
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .tile-newsletter-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+  .tile-newsletter-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, gap 0.2s;
+  }
+  .tile-newsletter-link:hover { border-color: var(--accent); gap: 0.8rem; }
+  .tile-column:nth-child(2) .tile-newsletter-link { color: var(--accent2); }
+  .tile-column:nth-child(2) .tile-newsletter-link:hover { border-color: var(--accent2); }
+
+  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
-    padding: 2.5rem 3rem;
+    padding: 1.8rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
   }
-
-  footer p {
+  footer p, footer a {
     font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  footer div { display: flex; gap: 2rem; }
-
-  footer a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
+    font-size: 0.61rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
     transition: color 0.2s;
   }
-
+  footer div { display: flex; gap: 2rem; }
   footer a:hover { color: var(--accent); }
 
   @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-14px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 768px) {
-    header { padding: 1.5rem; }
-    nav { gap: 1.2rem; }
-    .hero { padding: 4rem 1.5rem 3rem; }
-    .section-label, .tiles { padding: 0 1.5rem 4rem; }
-    .tiles { grid-template-columns: 1fr; }
-    .tile { padding: 2.5rem 2rem; min-height: auto; }
+  @media (max-width: 900px) {
+    header { padding: 1rem 1.5rem; }
+    .hero { flex-direction: column; gap: 1rem; padding: 1.6rem 1.5rem 1.2rem; }
+    .hero-right { max-width: 100%; border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 1rem; }
+    .divider-row { padding: 1rem 1.5rem 0.8rem; }
+    .tiles { grid-template-columns: 1fr; gap: 1.4rem; padding: 0 1.5rem 2rem; }
+    footer { padding: 1.6rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
   }
 </style>
 </head>
@@ -356,112 +381,104 @@
   <nav>
     <a href="#guides">Guides</a>
     <a href="about.html">About</a>
+
     <a href="#" class="cta">Newsletter</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">In-depth guides &amp; perspectives</div>
-  <h1>Deep thinking on <em>ideas that matter</em></h1>
-  <p>Exploring the intersections of technology, risk, artificial intelligence, human history, and the written word.</p>
+  <div class="hero-left">
+    <div class="hero-eyebrow">In-depth guides &amp; perspectives</div>
+    <h1>Deep thinking on <em>ideas that matter</em></h1>
+  </div>
+  <p class="hero-right">Exploring the intersections of technology, risk, artificial intelligence, human history, and the written word.</p>
 </section>
 
-<div class="section-label" id="guides">
+<div class="divider-row" id="guides">
   <span>Guides</span>
 </div>
 
 <div class="tiles">
 
-  <!-- Tile 1: IT Risk & Audit -->
-  <a href="it-risk-audit.html" class="tile">
-    <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="8" y="14" width="48" height="38" rx="3" stroke="#8b4513" stroke-width="1.5" fill="none"/>
-      <rect x="14" y="20" width="20" height="3" rx="1" fill="#8b4513" opacity="0.3"/>
-      <rect x="14" y="26" width="32" height="2" rx="1" fill="#8b4513" opacity="0.2"/>
-      <rect x="14" y="30" width="28" height="2" rx="1" fill="#8b4513" opacity="0.2"/>
-      <rect x="14" y="34" width="32" height="2" rx="1" fill="#8b4513" opacity="0.2"/>
-      <circle cx="50" cy="50" r="13" fill="#f5f0e8" stroke="#8b4513" stroke-width="1.5"/>
-      <path d="M44 50l4 4 8-7" stroke="#8b4513" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <div class="tile-meta">
-      <span class="tile-category">Frameworks &amp; Controls</span>
-      <h2 class="tile-title">IT Risk &amp;<br>Audit</h2>
-      <p class="tile-desc">Navigating the complexities of information technology risk, audit frameworks, controls, and governance in a rapidly changing landscape.</p>
+  <!-- Column 1: IT, AI Risk & Controls -->
+  <div class="tile-column">
+    <a href="it-risk-audit.html" class="tile">
+      <div class="tile-top">
+        <div class="tile-category">Frameworks · Controls · AI Risk</div>
+        <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="14" width="30" height="24" rx="2.5" stroke="#8b4513" stroke-width="1.5" fill="none"/>
+          <rect x="14" y="20" width="12" height="2" rx="1" fill="#8b4513" opacity="0.35"/>
+          <rect x="14" y="24" width="18" height="1.5" rx="0.75" fill="#8b4513" opacity="0.2"/>
+          <rect x="14" y="27.5" width="15" height="1.5" rx="0.75" fill="#8b4513" opacity="0.2"/>
+          <rect x="14" y="31" width="18" height="1.5" rx="0.75" fill="#8b4513" opacity="0.2"/>
+          <circle cx="50" cy="26" r="13" fill="#f5f0e8" stroke="#8b4513" stroke-width="1.5"/>
+          <path d="M44 26l4 4 8-7" stroke="#8b4513" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="20" cy="56" r="4" stroke="#8b4513" stroke-width="1.2" fill="none" opacity="0.6"/>
+          <circle cx="36" cy="52" r="4" stroke="#8b4513" stroke-width="1.2" fill="none" opacity="0.6"/>
+          <circle cx="52" cy="56" r="4" stroke="#8b4513" stroke-width="1.2" fill="none" opacity="0.6"/>
+          <line x1="24" y1="54.5" x2="32" y2="53" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
+          <line x1="40" y1="53" x2="48" y2="54.5" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
+        </svg>
+      </div>
+      <h2 class="tile-title">IT, AI Risk &amp;<br>Controls</h2>
+      <p class="tile-desc">Navigating IT audit frameworks, governance controls, and the emerging risk dimensions of artificial intelligence — from model governance to algorithmic bias.</p>
+      <div class="tile-sublinks">
+        <span class="tile-sublink">IT Risk &amp; Audit →</span>
+        <span class="tile-sublink">AI &amp; Risk →</span>
+      </div>
+      <div class="tile-arrow">
+        Explore guides
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+    <div class="tile-newsletter">
+      <span class="tile-newsletter-label">Newsletter</span>
+      <a href="#" class="tile-newsletter-link">
+        Mlu IT Risk Newsletter
+        <svg width="11" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
-    <div class="tile-arrow">
-      Explore guide
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-  </a>
+  </div>
 
-  <!-- Tile 2: AI and Risk -->
-  <a href="ai-risk.html" class="tile">
-    <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="36" cy="36" r="14" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
-      <circle cx="36" cy="36" r="5" fill="#2a6b7c" opacity="0.3"/>
-      <circle cx="36" cy="18" r="3" fill="#2a6b7c" opacity="0.5"/>
-      <circle cx="36" cy="54" r="3" fill="#2a6b7c" opacity="0.5"/>
-      <circle cx="18" cy="36" r="3" fill="#2a6b7c" opacity="0.5"/>
-      <circle cx="54" cy="36" r="3" fill="#2a6b7c" opacity="0.5"/>
-      <line x1="36" y1="21" x2="36" y2="31" stroke="#2a6b7c" stroke-width="1" opacity="0.5"/>
-      <line x1="36" y1="41" x2="36" y2="51" stroke="#2a6b7c" stroke-width="1" opacity="0.5"/>
-      <line x1="21" y1="36" x2="31" y2="36" stroke="#2a6b7c" stroke-width="1" opacity="0.5"/>
-      <line x1="41" y1="36" x2="51" y2="36" stroke="#2a6b7c" stroke-width="1" opacity="0.5"/>
-    </svg>
-    <div class="tile-meta">
-      <span class="tile-category">Emerging Technology</span>
-      <h2 class="tile-title">AI &amp;<br>Risk</h2>
-      <p class="tile-desc">Understanding the risk dimensions of artificial intelligence — from model governance and bias to systemic threats and strategic opportunity.</p>
+  <!-- Column 2: Books, History & Poetry -->
+  <div class="tile-column">
+    <a href="books-history.html" class="tile">
+      <div class="tile-top">
+        <div class="tile-category">Reading · Memory · Language</div>
+        <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="18" width="22" height="32" rx="2" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
+          <rect x="16" y="18" width="10" height="32" rx="1" fill="#2a6b7c" opacity="0.07"/>
+          <line x1="16" y1="26" x2="26" y2="26" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
+          <line x1="16" y1="30" x2="26" y2="30" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
+          <line x1="16" y1="34" x2="23" y2="34" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
+          <rect x="26" y="22" width="22" height="32" rx="2" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
+          <rect x="32" y="22" width="10" height="32" rx="1" fill="#2a6b7c" opacity="0.07"/>
+          <line x1="32" y1="30" x2="42" y2="30" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
+          <line x1="32" y1="34" x2="42" y2="34" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
+          <path d="M52 14 C46 20, 44 30, 52 38 C60 30, 58 20, 52 14Z" stroke="#2a6b7c" stroke-width="1.3" fill="none" opacity="0.7"/>
+          <line x1="52" y1="14" x2="52" y2="38" stroke="#2a6b7c" stroke-width="0.9" opacity="0.4" stroke-dasharray="2 2.5"/>
+          <circle cx="52" cy="14" r="2" fill="#2a6b7c" opacity="0.6"/>
+        </svg>
+      </div>
+      <h2 class="tile-title">Books, History<br>&amp; Poetry</h2>
+      <p class="tile-desc">Lessons drawn from great books and the long arc of history — alongside poems about identity, place, and the quiet spaces between certainty and doubt.</p>
+      <div class="tile-sublinks">
+        <span class="tile-sublink">Books &amp; History →</span>
+        <span class="tile-sublink">Poetry →</span>
+      </div>
+      <div class="tile-arrow">
+        Explore guides
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+    <div class="tile-newsletter">
+      <span class="tile-newsletter-label">Newsletter</span>
+      <a href="#" class="tile-newsletter-link">
+        Mlu Books &amp; History
+        <svg width="11" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
-    <div class="tile-arrow">
-      Explore guide
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-  </a>
-
-  <!-- Tile 3: Books & History -->
-  <a href="books-history.html" class="tile">
-    <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="12" y="16" width="26" height="40" rx="2" stroke="#8b4513" stroke-width="1.5" fill="none"/>
-      <rect x="18" y="16" width="14" height="40" rx="1" fill="#8b4513" opacity="0.07"/>
-      <line x1="18" y1="25" x2="32" y2="25" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-      <line x1="18" y1="29" x2="32" y2="29" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-      <line x1="18" y1="33" x2="28" y2="33" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-      <rect x="30" y="20" width="26" height="40" rx="2" stroke="#8b4513" stroke-width="1.5" fill="none"/>
-      <rect x="36" y="20" width="14" height="40" rx="1" fill="#8b4513" opacity="0.07"/>
-      <line x1="36" y1="29" x2="50" y2="29" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-      <line x1="36" y1="33" x2="50" y2="33" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-      <line x1="36" y1="37" x2="46" y2="37" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-    </svg>
-    <div class="tile-meta">
-      <span class="tile-category">Reading &amp; Memory</span>
-      <h2 class="tile-title">Books &amp;<br>History</h2>
-      <p class="tile-desc">Lessons drawn from great books and the arc of history — connecting the distant past to the decisions we make today.</p>
-    </div>
-    <div class="tile-arrow">
-      Explore guide
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-  </a>
-
-  <!-- Tile 4: Poetry -->
-  <a href="poetry.html" class="tile">
-    <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M36 12 C28 20, 14 26, 14 38 C14 50, 25 58, 36 58 C47 58, 58 50, 58 38 C58 26, 44 20, 36 12Z" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
-      <path d="M36 12 C36 12, 36 35, 36 58" stroke="#2a6b7c" stroke-width="1" opacity="0.4" stroke-dasharray="2 3"/>
-      <path d="M14 38 C14 38, 25 36, 36 38 C47 40, 58 38, 58 38" stroke="#2a6b7c" stroke-width="1" opacity="0.3"/>
-      <circle cx="36" cy="12" r="2.5" fill="#2a6b7c" opacity="0.7"/>
-    </svg>
-    <div class="tile-meta">
-      <span class="tile-category">Language &amp; Feeling</span>
-      <h2 class="tile-title">Poetry</h2>
-      <p class="tile-desc">Words arranged with intention. Poems about identity, place, struggle, wonder — and the quiet spaces between certainty and doubt.</p>
-    </div>
-    <div class="tile-arrow">
-      Explore guide
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-  </a>
+  </div>
 
 </div>
 
