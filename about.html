@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,42 +25,26 @@
   .portrait-block {
     background: var(--surface);
     border: 1px solid var(--border);
-    aspect-ratio: 3/4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
+    line-height: 0;
   }
 
-  .portrait-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    opacity: 0.35;
+  .portrait-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
   }
 
-  .portrait-placeholder svg {
-    width: 56px;
-    height: 56px;
-  }
-
-  .portrait-placeholder span {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* Accent bar behind portrait */
+  /* Accent bar above portrait */
   .portrait-block::before {
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 4px;
     background: var(--accent);
+    z-index: 1;
   }
 
   .aside-facts {
@@ -268,13 +253,7 @@
     <!-- Sidebar -->
     <aside class="about-aside">
       <div class="portrait-block">
-        <div class="portrait-placeholder">
-          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="28" cy="20" r="10" stroke="#7a7062" stroke-width="1.5" fill="none"/>
-            <path d="M8 50c0-11 9-18 20-18s20 7 20 18" stroke="#7a7062" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-          <span><img src="profile page.png" alt="alternatetext"></span>
-        </div>
+        <img src="Profile_page.jpg" alt="Mlungisi Dube">
       </div>
 
       <div class="aside-facts">
