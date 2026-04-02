@@ -530,10 +530,10 @@
     if (!email || !email.includes('@')) { input.focus(); return; }
 
     // Replace YOUR_BEEHIIV_PUBLICATION_ID with your actual Beehiiv publication ID
-    const BEEHIIV_PUB_ID = 'YOUR_BEEHIIV_PUBLICATION_ID';
+    const BEEHIIV_PUB_ID = 'pub_3e018ace-5f3f-4d24-87c7-9b6fdf6f2a5e';
 
     try {
-      await fetch(`https://api.beehiiv.com/v2/publications/${pub_3e018ace-5f3f-4d24-87c7-9b6fdf6f2a5e}/subscriptions`, {
+      await fetch(`https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, reactivate_existing: true, send_welcome_email: true })
