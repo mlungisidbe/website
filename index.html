@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,6 +308,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
   }
   .tile-newsletter-label {
     font-family: 'DM Mono', monospace;
@@ -316,22 +318,55 @@
     color: var(--muted);
     flex-shrink: 0;
   }
-  .tile-newsletter-link {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.57rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    text-decoration: none;
-    display: inline-flex;
+  .tile-newsletter-form {
+    display: flex;
     align-items: center;
     gap: 0.5rem;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s, gap 0.2s;
+    flex: 1;
+    min-width: 0;
   }
-  .tile-newsletter-link:hover { border-color: var(--accent); gap: 0.8rem; }
-  .tile-column:nth-child(2) .tile-newsletter-link { color: var(--accent2); }
-  .tile-column:nth-child(2) .tile-newsletter-link:hover { border-color: var(--accent2); }
+  .tile-newsletter-input {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.38rem 0.75rem;
+    border-radius: 2px;
+    outline: none;
+    flex: 1;
+    min-width: 0;
+    transition: border-color 0.2s;
+  }
+  .tile-newsletter-input::placeholder { color: var(--muted); opacity: 0.7; }
+  .tile-newsletter-input:focus { border-color: var(--accent); }
+  .tile-column:nth-child(2) .tile-newsletter-input:focus { border-color: var(--accent2); }
+  .tile-newsletter-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .tile-newsletter-btn:hover { opacity: 0.85; }
+  .tile-column:nth-child(2) .tile-newsletter-btn { background: var(--accent2); }
+  .tile-newsletter-msg {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: none;
+  }
+  .tile-newsletter-msg.visible { display: inline; }
 
   /* ── FOOTER ── */
   footer {
@@ -427,10 +462,11 @@
     </a>
     <div class="tile-newsletter">
       <span class="tile-newsletter-label">Newsletter</span>
-      <a href="#" class="tile-newsletter-link">
-        Mlu IT Risk Newsletter
-        <svg width="11" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <div class="tile-newsletter-form">
+        <input type="email" class="tile-newsletter-input" id="beehiiv-email" placeholder="your@email.com" autocomplete="email">
+        <button class="tile-newsletter-btn" onclick="subscribeBeehiiv()">Subscribe</button>
+        <span class="tile-newsletter-msg" id="beehiiv-msg">✓ Check your inbox</span>
+      </div>
     </div>
   </div>
 
@@ -467,11 +503,11 @@
     </a>
     <div class="tile-newsletter">
       <span class="tile-newsletter-label">Newsletter</span>
-      <a href="https://sensiblenonsensewithmlu.substack.com/embed" class="tile-newsletter-link">
-    
-        Mlu Books &amp; History
-        <svg width="11" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <div class="tile-newsletter-form">
+        <input type="email" class="tile-newsletter-input" id="substack-email" placeholder="your@email.com" autocomplete="email">
+        <button class="tile-newsletter-btn" onclick="subscribeSubstack()">Subscribe</button>
+        <span class="tile-newsletter-msg" id="substack-msg">✓ Check your inbox</span>
+      </div>
     </div>
   </div>
 
@@ -486,5 +522,43 @@
   </div>
 </footer>
 
+<script>
+  async function subscribeBeehiiv() {
+    const input = document.getElementById('beehiiv-email');
+    const msg = document.getElementById('beehiiv-msg');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) { input.focus(); return; }
+
+    // Replace YOUR_BEEHIIV_PUBLICATION_ID with your actual Beehiiv publication ID
+    const BEEHIIV_PUB_ID = 'YOUR_BEEHIIV_PUBLICATION_ID';
+
+    try {
+      await fetch(`https://api.beehiiv.com/v2/publications/${pub_3e018ace-5f3f-4d24-87c7-9b6fdf6f2a5e}/subscriptions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, reactivate_existing: true, send_welcome_email: true })
+      });
+    } catch(e) {}
+
+    input.style.display = 'none';
+    document.querySelector('[onclick="subscribeBeehiiv()"]').style.display = 'none';
+    msg.classList.add('visible');
+  }
+
+  function subscribeSubstack() {
+    const input = document.getElementById('substack-email');
+    const msg = document.getElementById('substack-msg');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) { input.focus(); return; }
+
+    // Opens Substack subscribe page with email pre-filled
+    const substackUrl = `https://sensiblenonsensewithmlu.substack.com/subscribe?email=${encodeURIComponent(email)}`;
+    window.open(substackUrl, '_blank');
+
+    input.style.display = 'none';
+    document.querySelector('[onclick="subscribeSubstack()"]').style.display = 'none';
+    msg.classList.add('visible');
+  }
+</script>
 </body>
 </html>
