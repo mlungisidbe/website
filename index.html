@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mlungisi Dube &mdash; IT Risk, Controls &amp; AI</title>
-<meta name="description" content="Helping professionals simplify IT Risk and Controls in a AI world with practical, real-world frameworks. 15+ years experience across Banking, Big 4, and global organisations.">
+<title>Mlungisi Dube &mdash; Tech Risk &amp; Assurance</title>
+<meta name="description" content="I help professionals break into Tech Risk & Assurance and build high-impact careers. Practical insights, real-world experience, and clear guidance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -30,84 +30,73 @@
   nav .cta:hover{background:var(--accent);color:#fff}
 
   /* HERO */
-  .hero{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 2.5rem;border-bottom:1px solid var(--border);animation:fadeUp .6s .1s ease both}
-  .hero-eyebrow{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem}
+  .hero{max-width:1200px;margin:0 auto;padding:3.8rem 3rem 3rem;border-bottom:1px solid var(--border);animation:fadeUp .6s .1s ease both}
+  .hero-eyebrow{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
   .hero-eyebrow::before{content:'';height:1px;width:24px;background:var(--accent);opacity:.5;flex-shrink:0}
-  .hero-body{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem}
-  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.4rem);font-weight:300;line-height:1.1;color:var(--text);max-width:700px}
+  .hero-body{display:flex;align-items:flex-start;justify-content:space-between;gap:4rem}
+  .hero-left{flex:1;min-width:0}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;line-height:1.06;color:var(--text);margin-bottom:1.4rem}
   .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero-right{flex-shrink:0;display:flex;flex-direction:column;gap:.85rem;max-width:280px;border-left:1px solid var(--border);padding-left:2rem}
+  .hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;line-height:1.7;color:var(--muted);max-width:540px;margin-bottom:1.8rem}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-primary{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--accent);border:1.5px solid var(--accent);padding:.6rem 1.5rem;border-radius:2px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+  .btn-primary:hover{opacity:.88}
+  .btn-secondary{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:transparent;border:1.5px solid var(--accent);padding:.6rem 1.5rem;border-radius:2px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+  .btn-secondary:hover{background:var(--accent);color:#fff}
+  .hero-right{flex-shrink:0;display:flex;flex-direction:column;gap:.85rem;width:240px;border-left:1px solid var(--border);padding-left:2rem}
   .hero-stat{display:flex;flex-direction:column;gap:.15rem}
   .hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--accent);line-height:1}
-  .hero-stat-label{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .hero-stat-label{font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .hero-stat-div{height:1px;background:var(--border)}
 
+  /* CREDENTIAL STRIP */
+  .cred-strip{max-width:1200px;margin:0 auto;padding:0 3rem;display:flex;gap:0;border-bottom:1px solid var(--border);animation:fadeUp .6s .18s ease both;overflow-x:auto}
+  .cred-item{padding:1rem 1.8rem 1rem 0;display:flex;align-items:center;gap:.7rem;border-right:1px solid var(--border);flex-shrink:0}
+  .cred-item:first-child{padding-left:0}
+  .cred-item:last-child{border-right:none}
+  .cred-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;opacity:.5}
+  .cred-text{font-family:'DM Mono',monospace;font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
-  /* VALUE STRIP */
-  .value-strip{max-width:1200px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border);animation:fadeUp .6s .22s ease both}
-  .value-item{padding:1.6rem 2rem 1.6rem 0;display:flex;flex-direction:column;gap:.4rem;border-right:1px solid var(--border)}
-  .value-item:last-child{border-right:none;padding-right:0}
-  .value-item:not(:first-child){padding-left:2rem}
-  .value-label{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-  .value-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:var(--text);line-height:1.5}
-
-  /* DIVIDERS */
-  .divider-row{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 3rem 1rem;max-width:1200px;margin:0 auto}
+  /* SECTION DIVIDER */
+  .divider-row{display:flex;align-items:center;gap:1.2rem;padding:1.4rem 3rem 1.1rem;max-width:1200px;margin:0 auto}
   .divider-row span{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
   .divider-row::after{content:'';flex:1;height:1px;background:var(--border)}
 
-  /* PRIMARY SECTION */
-  .primary-section{max-width:1200px;margin:0 auto;padding:0 3rem 0;display:grid;grid-template-columns:1fr 330px;gap:1.4rem;animation:fadeUp .6s .28s ease both}
+  /* WHAT I DO */
+  .what-i-do{max-width:1200px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;animation:fadeUp .6s .22s ease both}
+  .wid-intro{grid-column:1/-1;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:1.8rem 2.2rem}
+  .wid-intro p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;line-height:1.75;color:var(--text)}
+  .wid-card{background:var(--surface);border:1px solid var(--border);padding:1.6rem 1.8rem;display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden;transition:background .25s}
+  .wid-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .wid-card.teal::after{background:var(--accent2)}
+  .wid-card:hover{background:var(--bg)}
+  .wid-card:hover::after{transform:scaleX(1)}
+  .wid-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:.2rem}
+  .wid-title{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--text)}
+  .wid-desc{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;line-height:1.65;color:var(--muted)}
 
-  .feature-tile{background:var(--surface);border:1px solid var(--border);border-bottom:none;padding:2.4rem 2.6rem;text-decoration:none;display:flex;flex-direction:column;gap:1.1rem;position:relative;overflow:hidden;transition:background .3s}
-  .feature-tile::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-  .feature-tile:hover::after{transform:scaleX(1)}
-  .feature-tile:hover{background:var(--bg)}
-  .feature-tile::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .4s;background:radial-gradient(ellipse at top left,rgba(139,69,19,0.05) 0%,transparent 65%);pointer-events:none}
-  .feature-tile:hover::before{opacity:1}
+  /* HOW I CAN HELP */
+  .help-grid{max-width:1200px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;animation:fadeUp .6s .26s ease both}
+  .help-card{background:var(--surface);border:1px solid var(--border);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden;transition:background .25s}
+  .help-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .help-card:nth-child(2)::after{background:var(--accent2)}
+  .help-card:nth-child(3)::after{background:var(--accent)}
+  .help-card:hover{background:var(--bg)}
+  .help-card:hover::after{transform:scaleX(1)}
+  .help-icon{width:38px;height:38px;margin-bottom:.4rem;opacity:.85}
+  .help-tag{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .help-card:nth-child(2) .help-tag{color:var(--accent2)}
+  .help-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;line-height:1.15;color:var(--text)}
+  .help-desc{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;line-height:1.68;color:var(--muted)}
 
-  .tile-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
-  .tile-category{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-  .tile-icon{width:48px;height:48px;flex-shrink:0;opacity:.9}
-  .tile-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;line-height:1.08;color:var(--text)}
-  .tile-desc{font-family:'Cormorant Garamond',serif;font-size:1.02rem;font-weight:300;line-height:1.7;color:var(--muted)}
-  .tile-sublinks{display:flex;gap:1rem;flex-wrap:wrap}
-  .tile-sublink{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s,border-color .2s;text-decoration:none}
-  .feature-tile:hover .tile-sublink{color:var(--accent);border-color:var(--accent)}
-  .tile-arrow{margin-top:auto;padding-top:.6rem;display:flex;align-items:center;gap:.6rem;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--border);font-weight:600;transition:color .2s,gap .2s}
-  .feature-tile:hover .tile-arrow{color:var(--accent);gap:1rem}
+  /* INSIGHTS */
+  .insights-grid{max-width:1200px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;animation:fadeUp .6s .3s ease both}
+  .insight-pill-row{grid-column:1/-1;display:flex;gap:.7rem;flex-wrap:wrap}
+  .insight-pill{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--light-acc);border:1px solid var(--border);padding:.35rem .85rem;border-radius:2px}
+  .insight-pill.teal{color:var(--accent2);background:var(--light-acc2)}
 
-  .mini-tiles{display:flex;flex-direction:column;gap:1.4rem}
-  .mini-tile{background:var(--surface);border:1px solid var(--border);padding:1.7rem 1.9rem;text-decoration:none;display:flex;flex-direction:column;gap:.65rem;position:relative;overflow:hidden;transition:background .3s;flex:1}
-  .mini-tile::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-  .mini-tile.teal::after{background:var(--accent2)}
-  .mini-tile:hover::after{transform:scaleX(1)}
-  .mini-tile:hover{background:var(--bg)}
-  .mini-cat{font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-  .mini-tile.teal .mini-cat{color:var(--accent2)}
-  .mini-tile h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;line-height:1.15;color:var(--text)}
-  .mini-tile p{font-family:'Cormorant Garamond',serif;font-size:.93rem;font-weight:300;line-height:1.6;color:var(--muted)}
-  .mini-arrow{margin-top:auto;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--border);display:flex;align-items:center;gap:.5rem;transition:color .2s,gap .2s}
-  .mini-tile:hover .mini-arrow{color:var(--accent);gap:.9rem}
-  .mini-tile.teal:hover .mini-arrow{color:var(--accent2)}
-
-  /* NEWSLETTER */
-  .nl-strip{max-width:1200px;margin:0 auto;padding:0 3rem 0;animation:fadeUp .6s .34s ease both}
-  .nl-card{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--accent);padding:1.3rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
-  .nl-title{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--text);margin-bottom:.15rem}
-  .nl-sub{font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .nl-div{width:1px;height:36px;background:var(--border);flex-shrink:0}
-  .nl-form{display:flex;align-items:center;gap:.6rem;flex:1;min-width:200px}
-  .nl-input{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:.48rem .9rem;border-radius:2px;outline:none;flex:1;min-width:0;transition:border-color .2s}
-  .nl-input::placeholder{color:var(--muted);opacity:.7}
-  .nl-input:focus{border-color:var(--accent)}
-  .nl-btn{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--accent);border:none;padding:.48rem 1.2rem;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
-  .nl-btn:hover{opacity:.85}
-  .nl-msg{font-family:'DM Mono',monospace;font-size:.57rem;color:var(--accent);display:none}
-  .nl-msg.visible{display:inline}
-
-  /* LATEST ARTICLES TEASERS */
-  .teasers{max-width:1200px;margin:0 auto;padding:0 3rem 0;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;animation:fadeUp .6s .38s ease both}
+  /* TEASERS */
+  .teasers{max-width:1200px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;animation:fadeUp .6s .32s ease both}
   .teaser{background:var(--surface);border:1px solid var(--border);padding:1.8rem 2rem;text-decoration:none;display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden;transition:background .3s}
   .teaser::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
   .teaser.teal::after{background:var(--accent2)}
@@ -122,6 +111,51 @@
   .teaser-read{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--border);display:flex;align-items:center;gap:.4rem;transition:color .2s,gap .2s}
   .teaser:hover .teaser-read{color:var(--accent);gap:.7rem}
   .teaser.teal:hover .teaser-read{color:var(--accent2)}
+
+  /* ABOUT STRIP */
+  .about-strip{max-width:1200px;margin:0 auto;padding:0 3rem;animation:fadeUp .6s .34s ease both}
+  .about-card{background:var(--surface);border:1px solid var(--border);display:grid;grid-template-columns:200px 1fr auto;align-items:center;gap:0}
+  .about-photo{width:200px;height:200px;object-fit:cover;object-position:top;display:block;border-right:1px solid var(--border);flex-shrink:0}
+  .about-body{padding:2rem 2.4rem;display:flex;flex-direction:column;gap:.9rem}
+  .about-eyebrow{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .about-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--text);line-height:1.1}
+  .about-name em{font-style:italic;color:var(--accent)}
+  .about-bio{font-family:'Cormorant Garamond',serif;font-size:1.02rem;font-weight:300;line-height:1.72;color:var(--muted)}
+  .about-cta{border-left:1px solid var(--border);padding:2rem;display:flex;flex-direction:column;gap:1rem;align-items:flex-start;min-width:180px}
+  .about-cta-label{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .about-link{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s,gap .2s;border-bottom:1px solid var(--border);padding-bottom:2px}
+  .about-link:hover{color:var(--accent);gap:.8rem;border-color:var(--accent)}
+
+  /* FINAL CTA */
+  .final-cta{max-width:1200px;margin:0 auto;padding:0 3rem 2.5rem;animation:fadeUp .6s .38s ease both}
+  .final-cta-card{background:var(--accent);padding:2.8rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden}
+  .final-cta-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04)}
+  .final-cta-card::after{content:'';position:absolute;bottom:-60px;right:80px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.03)}
+  .final-cta-left{}
+  .final-cta-tag{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:.8rem}
+  .final-cta-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:.6rem}
+  .final-cta-heading em{font-style:italic}
+  .final-cta-sub{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.6}
+  .final-cta-actions{display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0}
+  .btn-white{font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:#fff;border:1.5px solid #fff;padding:.65rem 1.5rem;border-radius:2px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap}
+  .btn-white:hover{background:transparent;color:#fff}
+  .btn-white-outline{font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:transparent;border:1.5px solid rgba(255,255,255,0.5);padding:.65rem 1.5rem;border-radius:2px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap}
+  .btn-white-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+
+  /* NEWSLETTER */
+  .nl-strip{max-width:1200px;margin:0 auto;padding:0 3rem;animation:fadeUp .6s .36s ease both}
+  .nl-card{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--accent);padding:1.3rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+  .nl-title{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--text);margin-bottom:.15rem}
+  .nl-sub{font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nl-div{width:1px;height:36px;background:var(--border);flex-shrink:0}
+  .nl-form{display:flex;align-items:center;gap:.6rem;flex:1;min-width:200px}
+  .nl-input{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:.48rem .9rem;border-radius:2px;outline:none;flex:1;min-width:0;transition:border-color .2s}
+  .nl-input::placeholder{color:var(--muted);opacity:.7}
+  .nl-input:focus{border-color:var(--accent)}
+  .nl-btn{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--accent);border:none;padding:.48rem 1.2rem;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
+  .nl-btn:hover{opacity:.85}
+  .nl-msg{font-family:'DM Mono',monospace;font-size:.57rem;color:var(--accent);display:none}
+  .nl-msg.visible{display:inline}
 
   /* SECONDARY */
   .sec-divider{display:flex;align-items:center;gap:1.2rem;padding:.8rem 3rem 1rem;max-width:1200px;margin:0 auto}
@@ -151,15 +185,19 @@
   @media(max-width:960px){
     header{padding:1rem 1.5rem}
     nav{gap:1.2rem}
-    .hero,.cred-strip,.value-strip,.divider-row,.primary-section,.nl-strip,.teasers,.sec-divider,.secondary-section{padding-left:1.5rem;padding-right:1.5rem}
+    .hero,.divider-row,.what-i-do,.help-grid,.insights-grid,.teasers,.final-cta,.nl-strip{padding-left:1.5rem;padding-right:1.5rem}
     .hero{padding-top:2.5rem;padding-bottom:2rem}
-    .hero-body{flex-direction:column;align-items:flex-start;gap:1.5rem}
-    .hero-right{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:1.2rem;max-width:100%;flex-direction:row;gap:2rem;flex-wrap:wrap}
-    .primary-section{grid-template-columns:1fr}
-    .value-strip{grid-template-columns:1fr}
-    .value-item{border-right:none;border-bottom:1px solid var(--border);padding-left:0}
-    .value-item:last-child{border-bottom:none}
+    .hero-body{flex-direction:column;gap:1.8rem}
+    .hero-right{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:1.2rem;width:100%;flex-direction:row;gap:2rem;flex-wrap:wrap}
+    .what-i-do{grid-template-columns:1fr}
+    .wid-intro{grid-column:1}
+    .help-grid{grid-template-columns:1fr}
+    .insights-grid{grid-template-columns:1fr}
     .teasers{grid-template-columns:1fr}
+    .about-card{grid-template-columns:1fr;grid-template-rows:auto 1fr auto}
+    .about-photo{width:100%;height:220px;border-right:none;border-bottom:1px solid var(--border)}
+    .about-cta{border-left:none;border-top:1px solid var(--border);flex-direction:row;flex-wrap:wrap;align-items:center}
+    .final-cta-card{flex-direction:column;align-items:flex-start}
     .secondary-section{grid-template-columns:1fr}
     footer{padding:1.5rem;flex-direction:column;gap:1rem;text-align:center}
     footer div{justify-content:center}
@@ -174,24 +212,35 @@
     <a href="it-risk-audit.html">IT Risk</a>
     <a href="ai-risk.html">AI &amp; Risk</a>
     <a href="about.html">About</a>
+    <a href="poetry.html">Poetry</a>
     <a href="#newsletter" class="cta">Get the Newsletter</a>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="hero-eyebrow">IT Risk &#xB7; Controls &#xB7; Audit Readiness &#xB7; AI Governance</div>
+  <div class="hero-eyebrow">Tech Risk &middot; Assurance &middot; Career Growth &middot; Practical Insights</div>
   <div class="hero-body">
-    <h1>Helping professionals<br>simplify <em>IT Risk and Controls in an AI world <br></em> </h1>
+    <div class="hero-left">
+      <h1>I help professionals break into<br><em>Tech Risk &amp; Assurance</em><br>and build high-impact careers.</h1>
+      <p class="hero-sub">Practical insights, real-world experience, and clear guidance to help you navigate risk, compliance, and technology with confidence.</p>
+      <div class="hero-ctas">
+        <a href="it-risk-audit.html" class="btn-primary">
+          Explore Insights
+          <svg width="12" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="about.html#connect" class="btn-secondary">Get in Touch</a>
+      </div>
+    </div>
     <div class="hero-right">
       <div class="hero-stat">
         <span class="hero-stat-num">15+</span>
-        <span class="hero-stat-label">Years in IT Risk &amp; Assurance</span>
+        <span class="hero-stat-label">Years in Tech Risk &amp; Assurance</span>
       </div>
       <div class="hero-stat-div"></div>
       <div class="hero-stat">
-        <span class="hero-stat-num">Consulting  &amp; Industry </span>
-        <span class="hero-stat-label">EY; KPMG; Internal Audit; Risk </span>
+        <span class="hero-stat-num">Big 4</span>
+        <span class="hero-stat-label">EY &amp; KPMG UK background</span>
       </div>
       <div class="hero-stat-div"></div>
       <div class="hero-stat">
@@ -202,94 +251,114 @@
   </div>
 </section>
 
-<!-- VALUE STRIP -->
-<div class="value-strip">
-  <div class="value-item">
-    <span class="value-label">The Challenge</span>
-    <span class="value-text">IT risk and audit frameworks are complex, theoretical and fragmented &mdash; with most guidance written for academics, and not pragmatic.</span>
-  </div>
-  <div class="value-item">
-    <span class="value-label">Who This Is For</span>
-    <span class="value-text">IT risk managers, internal auditors, and governance professionals who need practical, usable guidance &mdash; not theory.</span>
-  </div>
-  <div class="value-item">
-    <span class="value-label">What You Get</span>
-    <span class="value-text">Frameworks, guides and insights drawn from 15+ years real world experience across Consulting and Industry&mdash; that you can actually apply.</span>
+
+<!-- ══ WHAT I DO ══ -->
+<div class="divider-row"><span>What I Do</span></div>
+
+<div class="what-i-do">
+  <div class="wid-intro">
+    <p>I work at the intersection of <strong>technology, risk, and business</strong>. Through 15+ years in Tech Risk &amp; Assurance &mdash; across EY, KPMG UK, and NatWest Group &mdash; I help professionals, organisations, and individuals navigate one of the most important fields in modern business.</p>
+    <ul style="margin-top:1.2rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:.55rem;list-style:none">
+      <li style="display:flex;align-items:flex-start;gap:.75rem"><span style="color:var(--accent);font-size:.9rem;margin-top:.18rem;flex-shrink:0">&#9642;</span><span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;line-height:1.65;color:var(--muted)"><strong style="font-weight:600;color:var(--text)">Professionals entering the field</strong> &mdash; Helping people understand Tech Risk &amp; Assurance, find their path in, and build careers that are grounded, progressive, and genuinely impactful.</span></li>
+      <li style="display:flex;align-items:flex-start;gap:.75rem"><span style="color:var(--accent);font-size:.9rem;margin-top:.18rem;flex-shrink:0">&#9642;</span><span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;line-height:1.65;color:var(--muted)"><strong style="font-weight:600;color:var(--text)">Organisations strengthening controls</strong> &mdash; Supporting organisations in improving their risk processes, control environments, and governance across complex technology landscapes.</span></li>
+      <li style="display:flex;align-items:flex-start;gap:.75rem"><span style="color:var(--accent);font-size:.9rem;margin-top:.18rem;flex-shrink:0">&#9642;</span><span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;line-height:1.65;color:var(--muted)"><strong style="font-weight:600;color:var(--text)">Individuals building future-proof careers</strong> &mdash; Sharing the lessons, frameworks, and career insights that make the difference between a good career and a great one &mdash; in a field that will only grow in importance.</span></li>
+    </ul>
   </div>
 </div>
 
-<!-- PRIMARY SECTION -->
-<div class="divider-row"><span>Core Content</span></div>
+<!-- ══ HOW I CAN HELP ══ -->
+<div class="divider-row" style="padding-top:1.5rem"><span>How I Can Help</span></div>
 
-<div class="primary-section">
+<div class="help-grid">
+  <div class="help-card">
+    <svg class="help-icon" viewBox="0 0 48 48" fill="none">
+      <circle cx="24" cy="18" r="8" stroke="#8b4513" stroke-width="1.5" fill="none"/>
+      <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#8b4513" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="help-tag">For Professionals</div>
+    <div class="help-title">Breaking into Tech Risk</div>
+    <div class="help-desc">Guidance on entering Tech Risk, IT Audit, and Assurance roles &mdash; without the confusion. Clear roadmaps, honest advice, and the context no job description gives you.</div>
+  </div>
+  <div class="help-card">
+    <svg class="help-icon" viewBox="0 0 48 48" fill="none">
+      <rect x="6" y="10" width="36" height="28" rx="2" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
+      <path d="M14 22l6 6 14-12" stroke="#2a6b7c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="help-tag">For Organisations</div>
+    <div class="help-title">Strengthening Risk &amp; Controls</div>
+    <div class="help-desc">Support in improving risk processes, control frameworks, and technology governance &mdash; drawing on experience across Banking, Big 4, and multi-industry environments.</div>
+  </div>
+  <div class="help-card">
+    <svg class="help-icon" viewBox="0 0 48 48" fill="none">
+      <path d="M8 36V16l16-8 16 8v20" stroke="#8b4513" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="18" y="26" width="12" height="10" rx="1" stroke="#8b4513" stroke-width="1.3" fill="none"/>
+      <line x1="24" y1="14" x2="24" y2="20" stroke="#8b4513" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <div class="help-tag">Through Content</div>
+    <div class="help-title">Clear, Practical Writing</div>
+    <div class="help-desc">Articles, guides, and frameworks that simplify complex topics in risk, audit, and technology &mdash; written for people who need to apply them, not just understand them.</div>
+  </div>
+</div>
 
-  <a href="it-risk-audit.html" class="feature-tile">
-    <div class="tile-top">
-      <div class="tile-category">Frameworks &#xB7; Controls &#xB7; Audit Practice &#xB7; SOx</div>
-      <svg class="tile-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="8" y="14" width="30" height="24" rx="2.5" stroke="#8b4513" stroke-width="1.5" fill="none"/>
-        <rect x="14" y="20" width="12" height="2" rx="1" fill="#8b4513" opacity="0.35"/>
-        <rect x="14" y="24" width="18" height="1.5" rx="0.75" fill="#8b4513" opacity="0.2"/>
-        <rect x="14" y="27.5" width="15" height="1.5" rx="0.75" fill="#8b4513" opacity="0.2"/>
-        <rect x="14" y="31" width="18" height="1.5" rx="0.75" fill="#8b4513" opacity="0.2"/>
-        <circle cx="50" cy="26" r="13" fill="#f5f0e8" stroke="#8b4513" stroke-width="1.5"/>
-        <path d="M44 26l4 4 8-7" stroke="#8b4513" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="20" cy="56" r="4" stroke="#8b4513" stroke-width="1.2" fill="none" opacity="0.6"/>
-        <circle cx="36" cy="52" r="4" stroke="#8b4513" stroke-width="1.2" fill="none" opacity="0.6"/>
-        <circle cx="52" cy="56" r="4" stroke="#8b4513" stroke-width="1.2" fill="none" opacity="0.6"/>
-        <line x1="24" y1="54.5" x2="32" y2="53" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-        <line x1="40" y1="53" x2="48" y2="54.5" stroke="#8b4513" stroke-width="1" opacity="0.4"/>
-      </svg>
-    </div>
-    <h2 class="tile-title">IT Risk &amp; Audit</h2>
-    <p class="tile-desc">Practical guides on IT audit frameworks, control testing, SOx compliance and governance &mdash; drawn from 15+ years. Designed for practitioners who need to understand what good looks like, and how to get there.</p>
-    <div class="tile-sublinks">
-      <span class="tile-sublink">Audit Frameworks &#x2192;</span>
-      <span class="tile-sublink">Control Testing &#x2192;</span>
-      <span class="tile-sublink">SOx &amp; Compliance &#x2192;</span>
-      <span class="tile-sublink">Cyber Risk &#x2192;</span>
-    </div>
-    <div class="tile-arrow">
-      Read the guides
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<!-- ══ INSIGHTS ══ -->
+<div class="divider-row" style="padding-top:1.5rem"><span>Insights</span></div>
+
+<div class="insights-grid">
+  <div class="insight-pill-row">
+    <span class="insight-pill">Tech Risk &amp; IT Audit</span>
+    <span class="insight-pill">Career growth &amp; transitions</span>
+    <span class="insight-pill teal">Navigating corporate environments</span>
+    <span class="insight-pill teal">The future of risk in a digital world</span>
+    <span class="insight-pill">AI Governance &amp; Controls</span>
+    <span class="insight-pill">SOx &amp; Compliance</span>
+  </div>
+</div>
+
+<div class="teasers" style="padding-top:.4rem">
+  <a href="audit-findings.html" class="teaser">
+    <span class="teaser-tag">IT Audit &middot; Leading Practice</span>
+    <h3>Writing Audit Findings That Actually Get Fixed</h3>
+    <p>Most findings die on paper. Seven leading-practice principles &mdash; from writing for impact to following up relentlessly &mdash; that separate audit work that changes things from audit work that fills folders.</p>
+    <div class="teaser-footer">
+      <span class="teaser-meta">7 Principles &middot; 8 min read</span>
+      <span class="teaser-read">Read article <svg width="11" height="8" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </div>
   </a>
-
-
- <a href="about.html" class="mini-tile teal">
-      <div class="mini-cat">Background &#xB7; Experience &#xB7; Mission</div>
-      <h3>15+ years in the field.</h3>
-      <p>Multi-industry. One focus: making IT risk and audit genuinely useful.</p>
-      <div class="mini-arrow">
-        About Mlungisi
-        <svg width="12" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
-
-  
-  <div class="mini-tiles">
-    <a href="ai-risk.html" class="mini-tile">
-      <div class="mini-cat">AI Governance &#xB7; Model Risk &#xB7; EU AI Act</div>
-      <h3>AI &amp; Risk</h3>
-      <p>How do you audit an AI model? What does good AI governance look like? Practical frameworks for the questions every risk professional will face.</p>
-      <div class="mini-arrow">
-        Explore AI &amp; Risk
-        <svg width="12" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
-    
-   
-  </div>
-
+  <a href="7-lessons.html" class="teaser teal">
+    <span class="teaser-tag">Career &middot; Tech Risk</span>
+    <h3>7 Lessons to My Younger Self in Technology Risk &amp; Assurance</h3>
+    <p>Fifteen years of hard-won lessons &mdash; on choosing the right manager, building relationships as an introvert, advocating for your work, and helping others along the way.</p>
+    <div class="teaser-footer">
+      <span class="teaser-meta">7 Lessons &middot; 5 min read</span>
+      <span class="teaser-read">Read article <svg width="11" height="8" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+  </a>
 </div>
 
-<!-- NEWSLETTER -->
-<div class="divider-row" style="padding-top:1.5rem" id="newsletter"><span>Newsletter</span></div>
+<!-- ══ FINAL CTA ══ -->
+<div class="divider-row" style="padding-top:1.5rem"><span>Work Together</span></div>
+
+<div class="final-cta">
+  <div class="final-cta-card">
+    <div class="final-cta-left">
+      <div class="final-cta-tag">Collaborate &middot; Learn &middot; Explore</div>
+      <div class="final-cta-heading">Want to collaborate, learn,<br>or <em>explore opportunities?</em></div>
+      <div class="final-cta-sub">Whether you&rsquo;re looking to break into Tech Risk, strengthen your organisation&rsquo;s control environment, or just explore ideas &mdash; I&rsquo;d love to hear from you.</div>
+    </div>
+    <div class="final-cta-actions">
+      <a href="https://www.linkedin.com/in/mlungisi-dube-11313a27/" target="_blank" rel="noopener" class="btn-white">Connect on LinkedIn</a>
+      <a href="#newsletter" class="btn-white-outline">Get the Newsletter</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NEWSLETTER ══ -->
+<div class="divider-row" id="newsletter" style="padding-top:1.5rem"><span>Newsletter</span></div>
 <div class="nl-strip">
   <div class="nl-card">
     <div>
       <div class="nl-title">Tech Risk Memo</div>
-      <div class="nl-sub">IT Risk &#xB7; Controls &#xB7; AI Governance &#xB7; Weekly</div>
+      <div class="nl-sub">IT Risk &middot; Controls &middot; Career &middot; AI Governance &middot; Weekly</div>
     </div>
     <div class="nl-div"></div>
     <div class="nl-form">
@@ -300,68 +369,6 @@
   </div>
 </div>
 
-<!-- LATEST ARTICLES -->
-<div class="divider-row" style="padding-top:1.5rem"><span>Latest from the site</span></div>
-
-<div class="teasers">
-  <a href="audit-findings.html" class="teaser">
-    <span class="teaser-tag">IT Audit &#xB7; Leading Practice</span>
-    <h3>Writing Audit Findings That Actually Get Fixed</h3>
-    <p>Most findings die on paper. Here is a breakdown of seven leading-practice principles &mdash; from writing for impact to following up relentlessly &mdash; that separates audit work that changes things from audit work that fills folders.</p>
-    <div class="teaser-footer">
-      <span class="teaser-meta">7 Principles &#xB7; 8 min read</span>
-      <span class="teaser-read">Read article <svg width="11" height="8" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-  </a>
-  <a href="7-lessons.html" class="teaser teal">
-    <span class="teaser-tag">Career &#xB7; IT Risk</span>
-    <h3>7 Lessons to My Younger Self in Technology Risk &amp; Assurance</h3>
-    <p>Fifteen years of hard-won lessons &mdash; on choosing the right manager, building relationships as an introvert, advocating for your work, and helping others along the way.</p>
-    <div class="teaser-footer">
-      <span class="teaser-meta">7 Lessons &#xB7; 5 min read</span>
-      <span class="teaser-read">Read article <svg width="11" height="8" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-  </a>
-</div>
-
-<!-- SECONDARY -->
-<div class="sec-divider"><span>Also on this site</span></div>
-<div class="secondary-section">
-  <a href="books-history.html" class="sec-tile">
-    <svg class="sec-icon" viewBox="0 0 72 72" fill="none">
-      <rect x="10" y="18" width="22" height="32" rx="2" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
-      <rect x="16" y="18" width="10" height="32" rx="1" fill="#2a6b7c" opacity="0.07"/>
-      <line x1="16" y1="26" x2="26" y2="26" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-      <line x1="16" y1="30" x2="26" y2="30" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-      <rect x="26" y="22" width="22" height="32" rx="2" stroke="#2a6b7c" stroke-width="1.5" fill="none"/>
-      <rect x="32" y="22" width="10" height="32" rx="1" fill="#2a6b7c" opacity="0.07"/>
-      <line x1="32" y1="30" x2="42" y2="30" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-      <line x1="32" y1="34" x2="42" y2="34" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-    </svg>
-    <div>
-      <div class="sec-label">Reading &#xB7; History &#xB7; Ideas</div>
-      <div class="sec-title">Books &amp; History</div>
-      <div class="sec-desc">Lessons from great books and the long arc of human history.</div>
-    </div>
-    <svg class="sec-arrow" width="12" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-  <a href="poetry.html" class="sec-tile">
-    <svg class="sec-icon" viewBox="0 0 72 72" fill="none">
-      <path d="M52 14 C46 20,44 30,52 38 C60 30,58 20,52 14Z" stroke="#2a6b7c" stroke-width="1.3" fill="none" opacity="0.7"/>
-      <line x1="52" y1="14" x2="52" y2="38" stroke="#2a6b7c" stroke-width="0.9" opacity="0.4" stroke-dasharray="2 2.5"/>
-      <circle cx="52" cy="14" r="2" fill="#2a6b7c" opacity="0.6"/>
-      <line x1="14" y1="30" x2="36" y2="30" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-      <line x1="14" y1="36" x2="32" y2="36" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-      <line x1="14" y1="42" x2="28" y2="42" stroke="#2a6b7c" stroke-width="1" opacity="0.4"/>
-    </svg>
-    <div>
-      <div class="sec-label">Language &#xB7; Identity &#xB7; Place</div>
-      <div class="sec-title">Poetry</div>
-      <div class="sec-desc">Poems about identity, place, and the quiet spaces between certainty and doubt.</div>
-    </div>
-    <svg class="sec-arrow" width="12" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-</div>
 
 <footer>
   <p>&copy; Mlungisidube.com &mdash; All rights reserved</p>
