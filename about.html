@@ -7,37 +7,31 @@
 <title>About — Mlungisi Dube</title>
 <link rel="stylesheet" href="shared.css">
 <style>
-  /* About-specific layout */
-  .about-grid {
+  /* ── LAYOUT ── */
+  .about-wrap {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 260px 1fr;
     gap: 4rem;
-    margin-bottom: 4rem;
+    align-items: start;
   }
 
-  /* Portrait / identity column */
-  .about-aside {
+  /* ── STICKY SIDEBAR ── */
+  .about-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0;
+    position: sticky;
+    top: 6rem;
   }
 
   .portrait-block {
     background: var(--surface);
     border: 1px solid var(--border);
+    border-bottom: none;
     position: relative;
     overflow: hidden;
     line-height: 0;
   }
-
-  .portrait-block img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-
-  /* Accent bar above portrait */
   .portrait-block::before {
     content: '';
     position: absolute;
@@ -46,178 +40,235 @@
     background: var(--accent);
     z-index: 1;
   }
-
-  .aside-facts {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 1px solid var(--border);
+  .portrait-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
   }
 
+  .aside-facts {
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
   .fact-row {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    padding: 1rem 1.2rem;
+    gap: 0.2rem;
+    padding: 0.85rem 1.1rem;
     border-bottom: 1px solid var(--border);
   }
   .fact-row:last-child { border-bottom: none; }
-
   .fact-label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.56rem;
+    font-size: 0.53rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
   }
-
   .fact-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--text);
     line-height: 1.4;
   }
 
-  /* Main content column */
+  /* ── MAIN CONTENT ── */
   .about-main {
     display: flex;
     flex-direction: column;
     gap: 0;
+    padding-bottom: 4rem;
   }
 
-  .about-main .prose-section h2 {
-    font-size: 1.7rem;
+  /* Section block */
+  .about-section {
+    padding: 2.2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .about-section:last-child { border-bottom: none; }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.57rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.1rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    height: 1px; width: 18px;
+    background: var(--accent);
+    opacity: 0.5;
+    flex-shrink: 0;
   }
 
-  /* Interests/disciplines row */
-  .disciplines {
+  .about-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.85rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .about-section h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .about-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+  .about-section p:last-child { margin-bottom: 0; }
+
+  .about-section p strong {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Bullet list */
+  .about-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin: 0.8rem 0 1rem 0;
+  }
+  .about-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--muted);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .about-list li::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+
+  /* Clarity callout — indented highlight block */
+  .clarity-block {
+    background: var(--light-accent);
+    border-left: 2px solid var(--accent);
+    padding: 1.2rem 1.4rem;
+    margin: 1.2rem 0;
+  }
+  .clarity-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+  }
+  .clarity-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.53rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* Belief cards */
+  .belief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin: 1.2rem 0;
+  }
+  .belief-card {
+    background: var(--surface);
+    padding: 1.3rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .belief-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+  }
+  .belief-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.98rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* Credibility tags */
+  .cred-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
   }
-
-  .discipline-tag {
+  .cred-tag {
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.16em;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid var(--light-accent);
     background: var(--light-accent);
+    border: 1px solid var(--light-accent);
     padding: 0.3rem 0.75rem;
+    border-radius: 2px;
   }
 
-  .discipline-tag.blue {
-    color: var(--accent2);
-    border-color: var(--light-accent2);
-    background: var(--light-accent2);
-  }
-
-  /* Connect section */
+  /* Connect buttons */
   .connect-row {
     display: flex;
-    gap: 1rem;
+    gap: 0.9rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
-
   .connect-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.55rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
+    font-size: 0.62rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text);
     text-decoration: none;
     border: 1.5px solid var(--border);
     padding: 0.55rem 1.1rem;
+    border-radius: 2px;
     transition: all 0.2s;
   }
+  .connect-link:hover { border-color: var(--accent); color: var(--accent); }
+  .connect-link.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .connect-link.primary:hover { background: transparent; color: var(--accent); }
 
-  .connect-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .connect-link.primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-  }
-
-  .connect-link.primary:hover {
-    background: transparent;
-    color: var(--accent);
-  }
-
-  /* Timeline */
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 3.5rem;
-  }
-
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 2rem;
-    padding: 1.6rem 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-  .timeline-item:first-child { border-top: 1px solid var(--border); }
-
-  .timeline-year {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--border);
-    line-height: 1;
-    padding-top: 0.1rem;
-    flex-shrink: 0;
-  }
-
-  .timeline-content h4 {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--text);
-    margin-bottom: 0.3rem;
-  }
-
-  .timeline-content p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--muted);
-  }
-
-  .timeline-tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .portrait-block { aspect-ratio: 4/3; max-height: 260px; }
-    .aside-facts { display: grid; grid-template-columns: 1fr 1fr; }
-    .fact-row:nth-child(even) { border-left: 1px solid var(--border); }
-    .timeline-item { grid-template-columns: 80px 1fr; gap: 1rem; }
+  @media (max-width: 860px) {
+    .about-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .about-sidebar { position: static; }
+    .belief-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -240,147 +291,186 @@
   </a>
   <div class="page-hero-eyebrow">The person behind the work</div>
   <h1>About <em>Mlungisi</em></h1>
-  <p class="lead">IT Risk professional, Reader, and Writer. Working at the intersection of Technology Governance and Artificial Intelligence. Obsessed with the long study of human affairs and the power of words.</p>
+  <p class="lead">Tech Risk &amp; Assurance professional focused on helping people and organisations navigate complexity with clarity.</p>
 </div>
 
 <div class="page-divider"></div>
 
 <div class="page-content">
+<div class="about-wrap">
 
-  <div class="about-grid">
-
-    <!-- Sidebar -->
-    <aside class="about-aside">
-      <div class="portrait-block">
-        <img src="Profile_page.jpg" alt="Mlungisi Dube">
+  <!-- ── SIDEBAR ── -->
+  <aside class="about-sidebar">
+    <div class="portrait-block">
+      <img src="Profile_page.jpg" alt="Mlungisi Dube">
+    </div>
+    <div class="aside-facts">
+      <div class="fact-row">
+        <span class="fact-label">Based in</span>
+        <span class="fact-value">Leeds, United Kingdom</span>
       </div>
+      <div class="fact-row">
+        <span class="fact-label">Current role</span>
+        <span class="fact-value">Technology SOx &amp; Control Testing CoE Lead — NatWest Group</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Background</span>
+        <span class="fact-value">EY · KPMG UK · NatWest</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Experience</span>
+        <span class="fact-value">15+ years in Tech Risk &amp; Assurance</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Industries</span>
+        <span class="fact-value">Banking · Telecoms · Mining · Retail · FMCG</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Currently reading</span>
+        <span class="fact-value">The Beginning of Infinity — David Deutsch</span>
+      </div>
+    </div>
+  </aside>
 
-      <div class="aside-facts">
-        <div class="fact-row">
-          <span class="fact-label">From; Based in</span>
-          <span class="fact-value">Zimbabwe; Manchester, United Kingdom</span>
+  <!-- ── MAIN ── -->
+  <div class="about-main">
+
+    <!-- ABOUT -->
+    <div class="about-section">
+      <div class="section-eyebrow">About</div>
+      <h2>I help people &amp; organisations navigate <em>complexity with clarity.</em></h2>
+      <p>I'm Mlungisi Dube — a Tech Risk &amp; Assurance professional with over 15 years of experience across Ernst &amp; Young, KPMG UK, and NatWest Group.</p>
+      <p>My work sits at the intersection of technology, risk, and business, where understanding systems isn't optional — it's critical.</p>
+    </div>
+
+    <!-- MY STORY -->
+    <div class="about-section">
+      <div class="section-eyebrow">My Story</div>
+      <h2>I didn't start with a perfectly <em>clear path.</em></h2>
+      <p>Like many professionals, I had to figure things out — navigating uncertainty, learning how systems actually work, and understanding where I could create real impact.</p>
+      <p>Along the way, I realised something important:</p>
+      <div class="clarity-block">
+        <span class="clarity-label">The insight</span>
+        <p>Most people struggle not because they lack ability — but because they lack clarity.</p>
+      </div>
+      <p>Clarity about:</p>
+      <ul class="about-list">
+        <li>How the field works</li>
+        <li>What skills actually matter</li>
+        <li>How to position themselves effectively</li>
+      </ul>
+      <p>That realisation is what shaped how I approach both my work and my writing today.</p>
+    </div>
+
+    <!-- WHAT I DO -->
+    <div class="about-section">
+      <div class="section-eyebrow">What I Do</div>
+      <h2>Tech Risk &amp; Assurance — <em>made actionable.</em></h2>
+      <p>I work in Tech Risk &amp; Assurance, focusing on how organisations manage risk within complex technology environments. This includes:</p>
+      <ul class="about-list">
+        <li>Understanding systems and controls</li>
+        <li>Identifying risks and gaps</li>
+        <li>Strengthening governance and processes</li>
+        <li>SOx compliance and control testing at scale</li>
+      </ul>
+      <p>But beyond the technical side, my work is about something deeper: <strong>helping make complexity understandable — and actionable.</strong></p>
+    </div>
+
+    <!-- HOW I THINK -->
+    <div class="about-section">
+      <div class="section-eyebrow">How I Think</div>
+      <h2>Three beliefs that <em>guide everything.</em></h2>
+      <div class="belief-grid">
+        <div class="belief-card">
+          <span class="belief-num">01</span>
+          <span class="belief-text">Complexity should be simplified, not hidden behind jargon.</span>
         </div>
-        <div class="fact-row">
-          <span class="fact-label">Profession</span>
-          <span class="fact-value">Technology SOx &amp; Control Testing CoE Lead</span>
+        <div class="belief-card">
+          <span class="belief-num">02</span>
+          <span class="belief-text">Careers should be intentional, not accidental.</span>
         </div>
-        <div class="fact-row">
-          <span class="fact-label">Focus areas</span>
-          <span class="fact-value">IT Controls · SOx · AI Governance · Cyber Risk · Audit Frameworks</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Currently reading</span>
-          <span class="fact-value">The Beginning of Infinity — David Deutsch</span>
+        <div class="belief-card">
+          <span class="belief-num">03</span>
+          <span class="belief-text">Technology without proper risk understanding creates more problems than it solves.</span>
         </div>
       </div>
-    </aside>
-
-    <!-- Main bio -->
-    <div class="about-main">
-
-      <div class="prose-section">
-        <h2>Who I Am</h2>
-        <p>I'm Mlungisi Dube — an IT Risk and Assurance professional with over 15 years of experience across 2 Big 4 Organisations and 2 Large Corporations, One in Retail and the other in Banking. I've worked in Banking. My work sits at the crossroads of IT governance, controls, audit readiness and AI — and the harder questions about how organisations build resilience in a fast-moving technological world.</p>
-        <p>I write because thinking in public sharpens thinking in private. I want to help , and I write what I wish I had to guide me with practical guides. I am hoping to translate 15+ years of experience into frameworks that practitioners can use right away </p>
-        <p>Beyond the professional, I'm a reader of history and literature, and an occasional poet. These are not separate pursuits. They are me. The same habits I have bleed over. I question everything, sometimes to the annoyance of those around me, have to be comfortable with ambiguity and look for the truth behind the surface</p>
-      </div>
-
-      <div class="disciplines">
-        <span class="discipline-tag">IT Control Testing</span>
-        <span class="discipline-tag">AI Governance</span>
-        <span class="discipline-tag">Cyber Risk</span>
-        <span class="discipline-tag">Audit Frameworks</span>
-        <span class="discipline-tag blue">African History</span>
-        <span class="discipline-tag blue">Books &amp; Ideas</span>
-        <span class="discipline-tag blue">Poetry</span>
-        <span class="discipline-tag blue">Philosophy</span>
-      </div>
-
+      <p>Everything I share — whether through my work or my writing — is grounded in these principles.</p>
     </div>
-  </div>
 
-  <!-- What this site is -->
-  <div class="callout">
-    <p>"This site is a long project — part professional resource, part intellectual journal. It will grow slowly and deliberately, as all things worth reading should."</p>
-  </div>
-
-  <div class="section-label"><span>Background</span></div>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <span class="timeline-year">Now</span>
-      <div class="timeline-content">
-        <span class="timeline-tag">Current</span>
-        <h4>Technology SOx &amp; Control Testing CoE Lead &mdash; NatWest Group</h4>
-        <p>Leading Technology SOx and Control Testing at NatWest Group, with a growing focus on AI governance and model risk. Writing practical guides and frameworks to help practitioners navigate the emerging landscape of algorithmic accountability.</p>
+    <!-- WHY THIS SITE -->
+    <div class="about-section">
+      <div class="section-eyebrow">Why This Site Exists</div>
+      <h2>A practical resource — not a <em>personal blog.</em></h2>
+      <p>This site is where I share what I've learned — and what I'm still learning. You'll find:</p>
+      <ul class="about-list">
+        <li>Practical insights on Tech Risk &amp; IT Audit</li>
+        <li>Career guidance for those entering or growing in the field</li>
+        <li>Perspectives on navigating modern organisations</li>
+      </ul>
+      <div class="clarity-block">
+        <span class="clarity-label">The goal</span>
+        <p>To provide clarity in a space that often feels unnecessarily complicated.</p>
       </div>
     </div>
 
-    <div class="timeline-item">
-      <span class="timeline-year">2015&ndash;22</span>
-      <div class="timeline-content">
-        <span class="timeline-tag">Big 4 &amp; Banking</span>
-        <h4>KPMG UK &mdash; Technology Risk</h4>
-        <p>Delivered technology risk engagements across Banking, Telecoms, Mining, Manufacturing and Retail. Specialising in IT General Controls, SOx compliance, and cloud risk advisory across complex global organisations.</p>
+    <!-- CREDIBILITY -->
+    <div class="about-section">
+      <div class="section-eyebrow">Credibility</div>
+      <h2>15+ years of <em>real-world experience.</em></h2>
+      <p>This isn't theory. Everything shared here is grounded in experience across complex, high-stakes environments — Big 4 consulting, global banking, and multi-industry risk engagements.</p>
+      <div class="cred-tags">
+        <span class="cred-tag">EY — IT Audit</span>
+        <span class="cred-tag">KPMG UK — Technology Risk</span>
+        <span class="cred-tag">NatWest — SOx &amp; Controls</span>
+        <span class="cred-tag">IT General Controls</span>
+        <span class="cred-tag">AI Governance</span>
+        <span class="cred-tag">Cyber Risk</span>
+        <span class="cred-tag">Audit Frameworks</span>
+        <span class="cred-tag">Banking · Telecoms · Mining · Retail</span>
+        <span class="cred-tag">BSc Computer Science — NUST</span>
       </div>
     </div>
 
-    <div class="timeline-item">
-      <span class="timeline-year">2010&ndash;15</span>
-      <div class="timeline-content">
-        <span class="timeline-tag">Big 4</span>
-        <h4>Ernst &amp; Young &mdash; IT Audit</h4>
-        <p>Began career in IT audit at EY, building foundational expertise in IT General Controls, application controls, and audit methodology across multiple industries.</p>
+    <!-- BEYOND WORK -->
+    <div class="about-section">
+      <div class="section-eyebrow">Beyond Work</div>
+      <h2>Growth — personal <em>and professional.</em></h2>
+      <p>Outside of work, I'm interested in growth in its broadest sense. That includes thinking deeply about:</p>
+      <ul class="about-list">
+        <li>How people build meaningful careers</li>
+        <li>How systems shape behaviour</li>
+        <li>How to continuously improve in a fast-changing world</li>
+      </ul>
+      <p>I'm also a reader of history and literature, and an occasional poet. These aren't separate from the professional side — they're part of the same habit of mind: questioning things, sitting with ambiguity, and looking for the truth behind the surface.</p>
+    </div>
+
+    <!-- LET'S CONNECT -->
+    <div class="about-section">
+      <div class="section-eyebrow">Let's Connect</div>
+      <h2>Interested in Tech Risk, career growth,<br>or navigating complexity?</h2>
+      <p>If you're interested in Tech Risk, career growth, or simply navigating complex environments more effectively — feel free to reach out. The newsletter is the best starting point.</p>
+      <div class="connect-row">
+        <a href="index.html#newsletter" class="connect-link primary">
+          <svg width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1 1h11v8H1zM1 1l5.5 5L12 1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Subscribe to Newsletter
+        </a>
+        <a href="https://www.linkedin.com/in/mlungisi-dube-11313a27/" class="connect-link" target="_blank" rel="noopener">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.tiktok.com/@tech.risk.with.mlu" class="connect-link" target="_blank" rel="noopener">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          TikTok — Tech Risk
+        </a>
       </div>
     </div>
 
-    <div class="timeline-item">
-      <span class="timeline-year">Writing</span>
-      <div class="timeline-content">
-        <span class="timeline-tag">Ongoing</span>
-        <h4>This Site &amp; the Newsletter</h4>
-        <p>Building a practical resource for risk and audit professionals — with guides drawn from 15+ years across Big 4 and banking. The newsletter delivers new frameworks and insights directly to readers each week.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <span class="timeline-year">Always</span>
-      <div class="timeline-content">
-        <span class="timeline-tag">Lifelong</span>
-        <h4>Reading &amp; Writing</h4>
-        <p>History, philosophy, African literature, and learning in public about grappling with the challenges that face us all. </p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-label"><span>Get in touch</span></div>
-
-  <div class="prose-section">
-    <h2>Let's Connect</h2>
-    <p>If you're working in risk, audit, or AI governance and want to exchange ideas — or if you've read something here that sparked a thought — I'd genuinely like to hear from you. The newsletter is the best way to stay in touch with new writing as it appears.</p>
-  </div>
-
-  <div class="connect-row">
-    <a href="#" class="connect-link primary">
-      <svg width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1 1h11v8H1zM1 1l5.5 5L12 1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Subscribe to Newsletter
-    </a>
-    <a href="https://www.linkedin.com/in/mlungisi-dube-11313a27/" class="connect-link" target="_blank" rel="noopener">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      LinkedIn
-    </a>
-    <a href="#" class="connect-link">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Twitter / X
-    </a>
-  </div>
-
-</div>
+  </div><!-- /about-main -->
+</div><!-- /about-wrap -->
+</div><!-- /page-content -->
 
 <footer>
-  <p>© Mlungisidube.com</p>
+  <p>&copy; Mlungisidube.com &mdash; All rights reserved</p>
   <div>
     <a href="https://www.linkedin.com/in/mlungisi-dube-11313a27/">LinkedIn</a>
     <a href="https://www.youtube.com/channel/UCtWi6vhFlPxaXe0EtfCEI8A">YouTube</a>
