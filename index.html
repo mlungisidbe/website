@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +31,7 @@
   nav .cta:hover{background:var(--accent);color:#fff}
 
   /* HERO */
-  .hero{max-width:1200px;margin:0 auto;padding:3.8rem 3rem 3rem;border-bottom:1px solid var(--border);animation:fadeUp .6s .1s ease both}
+  .hero{max-width:1200px;margin:0 auto;padding:3.8rem 3rem 3rem;animation:fadeUp .6s .1s ease both}
   .hero-eyebrow{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
   .hero-eyebrow::before{content:'';height:1px;width:24px;background:var(--accent);opacity:.5;flex-shrink:0}
   .hero-body{display:flex;align-items:flex-start;justify-content:space-between;gap:4rem}
@@ -217,13 +218,7 @@
     <div class="hero-left">
       <h1>I help professionals simplify<br><em>Tech Risk &amp; Assurance</em><br>in an AI world</h1>
       <p class="hero-sub">Practical insights, real-world experience, and clear guidance to help you navigate risk, compliance, and technology with confidence.</p>
-      <div class="hero-ctas">
-        <a href="it-risk-audit.html" class="btn-primary">
-          Explore Insights
-          <svg width="12" height="9" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="about.html#connect" class="btn-secondary">Get in Touch</a>
-      </div>
+
     </div>
     <div class="hero-right">
       <div class="hero-stat">
@@ -244,6 +239,23 @@
   </div>
 </section>
 
+
+<!-- ══ NEWSLETTER ══ -->
+<div class="divider-row" id="newsletter" style="padding-top:1.5rem"><span>Newsletter</span></div>
+<div class="nl-strip">
+  <div class="nl-card">
+    <div>
+      <div class="nl-title">Tech Risk Memo</div>
+      <div class="nl-sub">IT Risk &middot; Controls &middot; Career &middot; AI Governance &middot; Weekly</div>
+    </div>
+    <div class="nl-div"></div>
+    <div class="nl-form">
+      <input type="email" class="nl-input" id="beehiiv-email" placeholder="your@email.com" autocomplete="email">
+      <button class="nl-btn" onclick="subscribeBeehiiv()">Subscribe Free &#x2192;</button>
+      <span class="nl-msg" id="beehiiv-msg">&#10003; Check your inbox</span>
+    </div>
+  </div>
+</div>
 
 <!-- ══ WHAT I DO ══ -->
 <div class="divider-row"><span>What I Do</span></div>
@@ -340,30 +352,12 @@
   </div>
 </div>
 
-<!-- ══ NEWSLETTER ══ -->
-<div class="divider-row" id="newsletter" style="padding-top:1.5rem"><span>Newsletter</span></div>
-<div class="nl-strip">
-  <div class="nl-card">
-    <div>
-      <div class="nl-title">Tech Risk Memo</div>
-      <div class="nl-sub">IT Risk &middot; Controls &middot; Career &middot; AI Governance &middot; Weekly</div>
-    </div>
-    <div class="nl-div"></div>
-    <div class="nl-form">
-      <input type="email" class="nl-input" id="beehiiv-email" placeholder="your@email.com" autocomplete="email">
-      <button class="nl-btn" onclick="subscribeBeehiiv()">Subscribe Free &#x2192;</button>
-      <span class="nl-msg" id="beehiiv-msg">&#10003; Check your inbox</span>
-    </div>
-  </div>
-</div>
-
 
 <footer>
   <p>&copy; Mlungisidube.com &mdash; All rights reserved</p>
   <div>
-    <a href="https://www.linkedin.com/in/mlungisi-dube-11313a27/">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/mlungisidube/">LinkedIn</a>
     <a href="https://www.youtube.com/channel/UCtWi6vhFlPxaXe0EtfCEI8A">YouTube</a>
-    <a href="https://www.tiktok.com/@mlu_loves_books_and_history">TikTok &mdash; Books</a>
     <a href="https://www.tiktok.com/@tech.risk.with.mlu">TikTok &mdash; Tech Risk</a>
   </div>
 </footer>
